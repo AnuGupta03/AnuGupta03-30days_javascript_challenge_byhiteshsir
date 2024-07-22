@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Activity 1:Basic Event Handling -->
+    <!-- Task - 1 --> 
+    <!-- <h1 id="firstTask">Hello, Good Morning</h1>
+    <button id="myButton">Click Me!</button> -->
+
+        <!-- <script>
+            document.getElementById('myButton').addEventListener('click', function(){
+                document.getElementById("firstTask").innerText = "Hello, Good Evening";
+            })
+        </script> -->
+
+
+    <!-- Task - 2   When doubleClick on button will hide the omage-->
+    <!-- <img id="secondtask" src="https://cdn.pixabay.com/photo/2023/08/19/13/42/flowers-8200510_1280.jpg" style= "height: 400px" width="400px" " alt="">
+    <br/>
+    <button  id ="funcSecondtaskbutton">Toggle Image</button> -->
+
+    <!-- <script>
+            document.getElementById('funcSecondtaskbutton').addEventListener('dblclick', function(){
+                var val1 = document.getElementById("secondtask")  
+                let val = val1.style.visibility == "visible";
+                    val1.style.visibility = val ? "hidden": "visible";
+            })
+    </script>  -->
+
+    
+    <!-- Activity 2: Mouse Event -->
+    <!-- Task - 3  -->
+    <!-- <div id = "thirdtask" style="height: 200px; width: 200px; background-color: skyblue;" >
+    </div>
+    <script>
+        document.getElementById("thirdtask").addEventListener('mouseover', function(){
+            document.getElementById("thirdtask").style.backgroundColor = "red";
+        })
+    </script> -->
+
+    <!-- Task - 4  -->
+    <!-- <div id = "thirdtask" style="height: 200px; width: 200px; background-color: skyblue;" >
+    </div>
+    <script>
+        document.getElementById("thirdtask").addEventListener('mouseout', function(){
+            document.getElementById("thirdtask").style.backgroundColor = "red";
+        })
+    </script> -->
+
+    <!-- Activity 3: Mouse Event -->
+
+
+    <!-- Task - 5  -->
+    <!-- <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" placeholder="Type Someting...">
+    </form>
+
+    <script>
+        document.getElementById('fname').addEventListener('keydown', function(event){
+            console.log("Key Pressed:" + event.key);
+        })
+    </script> -->
+
+    <!-- Task - 6 -->
+    <!-- <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" placeholder="Type Someting...">
+        <p id="currentvalue"></p>
+    </form>
+
+    <script>
+        document.getElementById('fname').addEventListener('keyup', function(event){
+        let val = document.getElementById("currentvalue");
+        val.textContent += `${event.code}`;
+        })
+    </script> -->
+
+    <!-- Activity 4 Form Events -->
+    <!-- Task - 7 -->
+    <!-- <form id="myForm">
+        <input type="text" name="username" />
+        <input type="password" name="password" />
+        <button type="submit">Submit</button>
+    </form>
+    
+     <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        formData.forEach((value, key) => {
+            console.log(key, value);
+        });
+    });
+
+     </script> -->
+
+     <!-- Task - 8 -->
+     <!-- <label for="color">Choose a color:</label>
+     <select name="color" id="color">
+        <option value="red">Red</option>
+        <option value="pink">Pink</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+     </select>
+     <p id = "displays"></p>
+
+     <script>
+        document.getElementById('color').addEventListener('change', function(){
+            document.getElementById('displays').textContent = this.value;
+        })
+     </script> -->
+
+     <!-- Activity 5 Event Delegation -->
+     <!-- Task - 9 -->
+     <!-- <ul id="ninthtask">
+        <li> List Item 1</li>
+        <li> List Item 2</li>
+        <li> List Item 3</li>
+        <li> List Item 4</li>
+    </ul>
+     <script>
+     document.getElementById("ninthtask").addEventListener('click', function(e){
+        if(e.target.tagName === "LI"){
+            console.log(e.target.textContent);
+        }
+     })
+    </script> -->
+
+    <!-- Task - 10 -->
+    <div id="parentElement">
+        <button id="addChildButton">Add Child</button>
+    </div>   
+    <script>
+        document.getElementById("parentElement").addEventListener('click', function(event){
+            if(event.target.classList.contains('dynamicChild')){
+                console.log("dynamic Child Clicked", event.target.textContent);
+            }               
+        })
+        document.getElementById("addChildButton").addEventListener('click', function(){
+            const newchild = document.createElement('div');
+            newchild.textContent = "New Child";
+            newchild.classList.add("dynamicChild");
+            document.getElementById("parentElement").appendChild(newchild);
+        });
+    </script>  
+
+
+</body>
+</html>
