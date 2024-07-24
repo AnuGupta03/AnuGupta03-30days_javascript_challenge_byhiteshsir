@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Activity 1: Basic Error Handling with Try-Catch -->
+     <!-- Task 1: -->
+    <!-- <script>
+        function anu(id){
+                try{
+                        if(id>=20){
+                            throw new Error("id is a greater value");
+                        } 
+                } catch (error){
+                    console.log("function is giving error", error);
+                } 
+        }
+        anu(50);
+    </script> -->
+
+    <!-- <Task - 2> -->
+        <!-- <script>
+                    function newfunc(num1, num2){
+                            if(num2 === 0){
+                                throw new Error("Number is 0");
+                            }
+                            return num1/num2;
+                        }
+                        try{
+                            const result = newfunc(10, 5);
+                            console.log(result);
+                        } catch (error){
+                            console.log("There is no error in the function", error.message);
+                        }
+        </script> -->
+
+    <!-- Activity - 2 Finally Block-->
+    <!-- Task - 3 -->
+     <!-- <script>
+        function newfun(num1, num2){
+            if(num2 > num1){
+                throw new Error("Num2 is greater than num1")
+            }
+            return num1;
+        }
+        try{
+            const result = newfun(200, 40);
+            console.log(result);
+        } catch (error){
+            console.log("There is an Error in function", error.message);
+        } finally{
+            console.log("We Are Comparing the numbers.");
+        }
+        }
+     </script>  -->
+
+     <!-- Activity - 3 Custom Error Objects--> 
+     <!-- Task - 4 -->
+     <!-- <script>
+
+        class CheckCondition extends Element{
+            constructor(message){
+                super(message);
+                this.name = "HelloError";
+            }
+        }
+        function throwCustomError(){
+            throw new CheckCondition("this is a custom error");
+        }
+        try {
+            throwCustomError();
+        } catch (error){
+            console.log(error.message);
+        }
+     </script> -->
+
+     <!-- Task - 5 -->
+      <!-- <script>
+        class CheckCondition extends Error{
+            constructor(message) {
+                super(message);
+                this.name = "ValidationError";
+            }
+        }
+        function userinput(input){
+            if(!input){
+                    throw new CheckCondition("Input Cannot be Empty")  
+            }
+            return true;     
+        }
+            try{
+                userinput("");
+            } catch (error){
+                console.log("There is an error in program", error.message);
+            }
+      </script> -->
+
+      <!-- Activity - 4 Error Handling in Promises -->
+      <!-- Task - 6 -->
+       <!-- <script>
+            let newpromise = new Promise((resolve, reject) =>{
+                let random = Math.random();
+                if(random > 0.5){
+                    resolve("Promise Resolved");
+                } else{
+                    reject("Promise Rejected");
+                }
+            });
+            newpromise
+            .then(message => console.log(message))
+            .catch(error => console.log(error));
+       </script> -->
+
+
+    <!-- Task - 7 -->
+     <!-- <script>
+        async function HandleRandomError(){
+            let newpromise = new Promise((resolve, reject) =>{
+                let random = Math.random();
+                if(random > 1){
+                    resolve("Promise Resolved");
+                } else{
+                    reject("Promise Rejected");
+                }
+            });
+            try{
+                let result = await newpromise;
+                console.log(result);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        HandleRandomError()
+     </script> -->
+
+     <!-- Task - 8 -->
+        <!-- <script>
+            fetch("https://jsoneditoronline.org/")
+            .then(message => console.log(message))
+            .catch(error => console.log(error));
+        </script> -->
+
+    <!-- Task - 9 -->
+        <script>
+        async function HandleRandomError(){
+            try{
+                let val = await fetch("https://jsoneditoronline.org/");
+                console.log(val);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        HandleRandomError()
+        </script>
+</body>
+</html>
